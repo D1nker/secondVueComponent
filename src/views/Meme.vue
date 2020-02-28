@@ -16,7 +16,7 @@ export default {
   },
   data() {
     return {
-      images: Array || Object || Function,
+      images: Array || Function || Object,
     }
   },
   mounted() {
@@ -28,7 +28,6 @@ export default {
         const response = await fetch('https://api.imgflip.com/get_memes')
         const data = await response.json()
         this.images = data.data.memes
-        console.log(this.images);
       } catch (error) {
         console.error(error)
       }

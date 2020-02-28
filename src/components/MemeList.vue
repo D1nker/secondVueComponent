@@ -17,12 +17,11 @@
 export default {
   name: 'MemeList',
   props: {
-    images: Array || Object || Function,
-    // eslint-disable-next-line vue/require-prop-type-constructor
-    clicked: false
+    images: Array || Function || Object,
   },
   data() {
     return {
+      clicked: false,
     }
   },
   methods: {
@@ -38,10 +37,10 @@ export default {
     copy(image) {
       console.log(image);
       this.copyToClipboard(image.url)
-      // this.clicked = true;
+      this.clicked = true;
     },
     hover() {
-      // this.clicked = false;
+      this.clicked = false;
     }
   }
 }
